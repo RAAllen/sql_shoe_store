@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% include "partials/header.html" %}
+  <body>
+    <div class="container">
+
+      <div class="page-header">
+        <h1>Shoe Store</h1>
+      </div>
+
+      <div class="panel with-nav-tabs">
+
+        <div class="panel-heading">
+          <ul class="nav nav-tabs nav-justified">
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/brands">Brands</a></li>
+            <li><a href="/stores">Stores</a></li>
+          </ul>
+        </div>
+
+        <div class="panel-body">
+          <div class="row">
+            <h3>Welcome to your SQL Shoe Store Manager!</h3>
+            <div class="col-xs-6">
+              <h3>List of Stores:</h3>
+              <ul>
+                {% for store in stores %}
+                  <li><a href="store/{{store.getId}}">{{ store.name|e }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+            <div class="col-xs-6">
+              <h3>New Store:</h3>
+              <p>Add a new store in the form below.</p>
+              <form action="/added_store/{{ store.getId }}" method="post">
+                <div class="form-group">
+                  <label for="add-store">Add the store's name:</label>
+                  <input class="form-control" name="add-store" type="text" placeholder="Fred's Footwear">
+                </div>
+                <button type="submit" name="form-submit">Click to add!</button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </body>
+</html>

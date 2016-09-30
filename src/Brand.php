@@ -70,8 +70,5 @@
     {
       $GLOBALS['DB']->exec("DELETE FROM brands;");
     }
-
-
-
   }
 ?>

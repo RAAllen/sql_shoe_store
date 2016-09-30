@@ -24,10 +24,10 @@
     function testGetId()
     {
       //Arrange
-      $name = "Nike";
-      $test_brand = new Brand($name, $id = 1);
+      $name = "Fred's Footwear";
+      $test_store = new Store($name, $id = 1);
       //Act
-      $result = $test_brand->getId();
+      $result = $test_store->getId();
       //Assert
       $this->assertEquals($id, $result);
     }
@@ -35,11 +35,11 @@
     function testGetName()
     {
       //Arrange
-      $name = "Nike";
-      $test_brand = new Brand($name);
-      $test_brand->save();
+      $name = "Fred's Footwear";
+      $test_store = new Store($name);
+      $test_store->save();
       //Act
-      $result = $test_brand->getName();
+      $result = $test_store->getName();
       //Assert
       $this->assertEquals($name, $result);
     }
@@ -47,14 +47,14 @@
     function testSave()
     {
       // Arrange
-      $name = "Nike";
-      $test_brand = new Brand($name);
+      $name = "Fred's Footwear";
+      $test_store = new Store($name);
 
       // Act
-      $test_brand->save();
+      $test_store->save();
 
       // Assert
-      $this->assertEquals([$test_brand], Brand::getAll());
+      $this->assertEquals([$test_store], Store::getAll());
     }
 
   }
