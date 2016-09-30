@@ -12,7 +12,7 @@
 
     function getId()
     {
-      return $this->id;
+      return (int) $this->id;
     }
 
     function getName()

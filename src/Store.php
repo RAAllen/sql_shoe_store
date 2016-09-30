@@ -12,7 +12,7 @@
 
     function getId()
     {
-      return $this->id;
+      return (int) $this->id;
     }
 
     function getName()
@@ -31,7 +31,7 @@
       $this->id = $GLOBALS['DB']->lastInsertId();
     }
 
-    function update ($new_name)
+    function updateName($new_name)
     {
       $GLOBALS['DB']->exec("UPDATE stores SET name = '{$new_name}' WHERE id = {$this->getId()};");
       $this->setName($new_name);
@@ -42,10 +42,10 @@
       $GLOBALS['DB']->exec("DELETE FROM stores WHERE id = {$this->getId()};");
     }
 
-    function addBrand($new_brand)
-    {
-      $GLOBALS['DB']->exec("INSERT INTO stores_brands (store_id, brand_id) VALUES ({$this->getId()}, {$new_brand->getId()});");
-    }
+    // function addBrand()
+    // {
+    //   $GLOBALS['DB']->exec("INSERT INTO stores_brands (store_id, brand_id) VALUES ({$this->getId()}, {$new_brand->getId()});");
+    // }
 
     function getBrands()
     {
