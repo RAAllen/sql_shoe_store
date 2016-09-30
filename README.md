@@ -23,6 +23,71 @@
 * Example Input: .
 * Example Output: .
 
+* _The program's databases were made with the following commands entered into the terminal. Before beginning navigate to the project directory. Then enter the following command "/Applications/MAMP/Library/bin/mysql --host=localhost -uroot -proot" to begin your mysql commands._
+* CREATE DATABASE shoes;
+* USE shoes;
+* CREATE TABLE brands (name VARCHAR (255), id serial PRIMARY KEY);
+* CREATE TABLE stores (name VARCHAR (255), id serial PRIMARY KEY);
+* CREATE TABLE brands_stores (store_id INT, brand_id INT, id serial PRIMARY KEY);
+* INSERT INTO brands (name) VALUES ('Nike');
+* INSERT INTO brands (name) VALUES ('Saucony');
+* INSERT INTO brands (name) VALUES ('Reebok');
+* INSERT INTO brands (name) VALUES ('Clarks');
+* INSERT INTO brands (name) VALUES ('Manolo Blahnik');
+* INSERT INTO brands (name) VALUES ('Jimmy Choo');
+* INSERT INTO brands (name) VALUES ('Christian Louboutin');
+* INSERT INTO brands (name) VALUES ('Birkenstock');
+* INSERT INTO brands (name) VALUES ('UGG');
+* INSERT INTO brands (name) VALUES ('Crocs');
+* INSERT INTO brands (name) VALUES ('Keds');
+* INSERT INTO brands (name) VALUES ('Adidas');
+* INSERT INTO brands (name) VALUES ('Cole Haan');
+* INSERT INTO brands (name) VALUES ('Dr. Martens');
+* INSERT INTO brands (name) VALUES ('Moon Boot');
+* INSERT INTO stores (name) VALUES ("Fred's Footwear");
+* INSERT INTO stores (name) VALUES ("Lila's Loafers");
+* INSERT INTO stores (name) VALUES ("Sally's Shoes");
+* INSERT INTO stores (name) VALUES ("Cathy's Clogs");
+* INSERT INTO stores (name) VALUES ("Helena's Heels");
+* INSERT INTO stores (name) VALUES ("Sam's Sneakers");
+* INSERT INTO stores (name) VALUES ("Walkwell's");
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (1, 1);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (1, 4);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (1, 6);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (1, 8);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (1, 9);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (1, 13);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (1, 15);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (2, 4);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (2, 8);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (2, 10);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (2, 12);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (3, 3);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (3, 7);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (3, 11);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (3, 12);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (3, 13);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (3, 14);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (3, 15);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (4, 4);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (4, 10);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (5, 5);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (5, 6);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (5, 7);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (6, 1);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (6, 2);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (6, 3);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (6, 11);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (6, 12);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (7, 2);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (7, 5);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (7, 9);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (7, 11);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (7, 12);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (7, 13);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (7, 14);
+* INSERT INTO brands_stores (store_id, brand_id) VALUES (7, 15);
+
 ## Support and Contact Details
 
 _Please contact RebeccaZarsky@gmail.com for technical questions or assistance running the program_
