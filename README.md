@@ -23,9 +23,6 @@
 * Example Input: .
 * Example Output: .
 
-
-
-
 ## Support and Contact Details
 
 _Please contact RebeccaZarsky@gmail.com for technical questions or assistance running the program_
