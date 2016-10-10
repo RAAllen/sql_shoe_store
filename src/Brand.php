@@ -42,10 +42,10 @@
       $GLOBALS['DB']->exec("DELETE FROM brands WHERE id = {$this->getId()};");
     }
 
-    // static function addStore($new_store)
-    // {
-    //   $GLOBALS['DB']->exec("INSERT INTO brands_stores (store_id, brand_id) VALUES ({$this->getId()}, {$new_store->getId()});");
-    // }
+    static function addStore($new_store)
+    {
+      $GLOBALS['DB']->exec("INSERT INTO brands_stores (store_id, brand_id) VALUES ({$this->getId()}, {$new_store->getId()});");
+    }
 
     function getStores()
     {

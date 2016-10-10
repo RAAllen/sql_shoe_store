@@ -23,13 +23,15 @@
             <h3>Welcome to your SQL Shoe Store Manager!</h3>
             <div class="col-xs-6">
             <p>Add stores that carry your brand in the form to the right. Or go back to the main brands page by clicking the button below.</p>
-            <button><a href="/brands">Click me!</a></button>
+            <button action="/brands" method="post">Click me!</button>
+            <p>Or you can delete this brand by clicking the button below.</p>
+            <button></a href="delete_brand">Delete here!</a></button>
             </div>
             <div class="col-xs-6">
               <form action="/add_store_to_brand/{{ brand.getId }}" method="post">
                 <div class="form-group">
-                  <label for="add-store">Add a new store's name:</label>
-                  <input class="form-control" name="add-store" type="text" placeholder="Fred's Footwear">
+                  <label for="new-store">Add a new store's name:</label>
+                  <input class="form-control" name="new-store" type="text" placeholder="Fred's Footwear">
                 </div>
                 <label for="store_id">Or add an existing store that carries your brand:</label>
                 <select name="store_id" class="form-control">

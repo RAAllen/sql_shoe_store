@@ -24,12 +24,14 @@
             <div class="col-xs-6">
             <p>Add brands of shoes that your store carries in the form to the right. Or go back to the main stores page by clicking the button below.</p>
             <button><a href="/stores">Click me!</a></button>
+            <p>Or you can delete this store by clicking the button below.</p>
+            <button action="delete_store" method="post">Delete here!</button>
             </div>
             <div class="col-xs-6">
               <form action="/add_brand_to_store/{{ store.getId }}" method="post">
                 <div class="form-group">
-                  <label for="add-brand">Add a new brand's name:</label>
-                  <input class="form-control" name="add-brand" type="text" placeholder="Fred's Footwear">
+                  <label for="new-brand">Add a new brand's name:</label>
+                  <input class="form-control" name="new-brand" type="text" placeholder="Fred's Footwear">
                 </div>
                 <label for="brand_id">Or add an existing brand that your store carries:</label>
                 <select name="brand_id" class="form-control">
