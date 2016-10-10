@@ -12,8 +12,8 @@
 
         <div class="panel-heading">
           <ul class="nav nav-tabs nav-justified">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/brands">Brands</a></li>
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/brands">Brands</a></li>
             <li><a href="/stores">Stores</a></li>
           </ul>
         </div>
@@ -25,14 +25,14 @@
               <h3>List of Brands:</h3>
               <ul>
                 {% for brand in brands %}
-                  <li><a href="brand/{{brand.getId}}">{{ brand.name|e }}</a></li>
+                  <li><a href="edit_brand/{{brand.getId}}">{{ brand.getName }}</a></li>
                 {% endfor %}
               </ul>
             </div>
             <div class="col-xs-6">
               <h3>New Brand:</h3>
               <p>Add a new brand in the form below.</p>
-              <form action="/added_brand/{{ brand.getId }}" method="post">
+              <form action="/add_brand/{{ brand.getId }}" method="post">
                 <div class="form-group">
                   <label for="add-brand">Add the brand's name:</label>
                   <input class="form-control" name="add-brand" type="text" placeholder="Nike">

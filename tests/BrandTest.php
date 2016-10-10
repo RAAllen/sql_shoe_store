@@ -67,9 +67,9 @@
       // Act
       $result = Brand::getAll();
       // Assert
-      $this->assertEquals([$test_brand], $result[0]);
+      $this->assertEquals([$test_brand], Brand::getAll());
     }
-
+    //
     // function testAddStore($new_store)
     // {
     //   //Arrange
@@ -85,7 +85,7 @@
     //   //Assert
     //   $this->assertEquals([$test_store], $test_brand->getStores());
     // }
-
+    //
     // function testGetStores()
     // {
     //   //Arrange

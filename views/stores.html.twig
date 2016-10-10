@@ -12,9 +12,9 @@
 
         <div class="panel-heading">
           <ul class="nav nav-tabs nav-justified">
-            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/">Home</a></li>
             <li><a href="/brands">Brands</a></li>
-            <li><a href="/stores">Stores</a></li>
+            <li class="active"><a href="/stores">Stores</a></li>
           </ul>
         </div>
 
@@ -25,14 +25,14 @@
               <h3>List of Stores:</h3>
               <ul>
                 {% for store in stores %}
-                  <li><a href="store/{{store.getId}}">{{ store.name|e }}</a></li>
+                  <li><a href="edit_store/{{store.getId}}">{{ store.getName }}</a></li>
                 {% endfor %}
               </ul>
             </div>
             <div class="col-xs-6">
               <h3>New Store:</h3>
               <p>Add a new store in the form below.</p>
-              <form action="/added_store/{{ store.getId }}" method="post">
+              <form action="/add_store/{{ store.getId }}" method="post">
                 <div class="form-group">
                   <label for="add-store">Add the store's name:</label>
                   <input class="form-control" name="add-store" type="text" placeholder="Fred's Footwear">

@@ -31,7 +31,7 @@
       $this->id = $GLOBALS['DB']->lastInsertId();
     }
 
-    function updateName($new_name)
+    function update($new_name)
     {
       $GLOBALS['DB']->exec("UPDATE stores SET name = '{$new_name}' WHERE id = {$this->getId()};");
       $this->setName($new_name);
@@ -42,16 +42,21 @@
       $GLOBALS['DB']->exec("DELETE FROM stores WHERE id = {$this->getId()};");
     }
 
-    // function addBrand()
-    // {
-    //   $GLOBALS['DB']->exec("INSERT INTO stores_brands (store_id, brand_id) VALUES ({$this->getId()}, {$new_brand->getId()});");
-    // }
+    function addBrand($new_brand)
+    {
+      $GLOBALS['DB']->exec("INSERT INTO brands_stores (store_id, brand_id) VALUES ({$this->getId()}, {$new_brand->getId()});");
+    }
+
+    function deleteBrand($brand_id)
+    {
+      $GLOBALS['DB']->exec("DELETE FROM stores WHERE id = {$this->getId()};");
+    }
 
     function getBrands()
     {
       $returned_brands = $GLOBALS['DB']->query("SELECT brands.* FROM stores
-        JOIN stores_brands ON (stores_brands.store_id = store.id)
-        JOIN stores ON (brands.id = stores_brands.store_id)
+        JOIN stores_brands ON (brands_stores.store_id = store.id)
+        JOIN stores ON (brands.id = brands_stores.store_id)
         WHERE stores.id = {$this->getId()};");
       $brands = array();
       foreach($returned_brands as $brand)
@@ -61,6 +66,7 @@
         $new_brand = new Brand($name, $id);
         array_push($brands, $new_brand);
       }
+      return $brands;
     }
 
     static function getAll()
@@ -80,6 +86,21 @@
     static function deleteAll()
     {
       $GLOBALS['DB']->exec("DELETE FROM stores;");
+    }
+
+    static function find($search_id)
+    {
+      $found_store = null;
+      $stores = Store::getAll();
+      foreach ($stores as $stores)
+      {
+        $store_id = $store->getId();
+        if ($store_id == $search_id)
+        {
+          $found_store = $store;
+        }
+      }
+      return $found_store;
     }
 
   }
